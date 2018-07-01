@@ -24,7 +24,8 @@ export default () => {
   if (module.hot) {
     module.hot.accept(() => {
       const nextRootReducer = require('./').reducers
-      store.replaceReducer(nextRootReducer)
+      const persistConfig = ReduxPersist.storeConfig
+      store.replaceReducer(persistReducer(persistConfig, nextRootReducer))
 
       const newYieldedSagas = require('../Sagas').default
       sagasManager.cancel()
