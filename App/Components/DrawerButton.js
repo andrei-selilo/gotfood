@@ -26,7 +26,7 @@ class DrawerButton extends Component {
   render () {
     return (
       <TouchableOpacity onPress={this.props.onPress}>
-        <Text style={styles.text}>{this.props.text}</Text>
+        <Text style={[styles.text, this.props.style]}>{this.props.text}</Text>
       </TouchableOpacity>
     )
   }

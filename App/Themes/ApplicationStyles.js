@@ -65,13 +65,8 @@ const ApplicationStyles = {
   },
   sectionTitle: {
     ...Fonts.style.h4,
+    fontFamily: Fonts.type.bold,
     color: Colors.coal,
-    backgroundColor: Colors.ricePaper,
-    padding: Metrics.smallMargin,
-    marginTop: Metrics.smallMargin,
-    marginHorizontal: Metrics.baseMargin,
-    borderWidth: 1,
-    borderColor: Colors.ember,
     alignItems: 'center',
     textAlign: 'center'
   }
