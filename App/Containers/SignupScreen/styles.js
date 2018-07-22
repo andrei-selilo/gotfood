@@ -12,19 +12,20 @@ const styles = StyleSheet.create({
         width: 250,
     },
     logoContainer: {
-        marginTop: "40%",
+        flex: 0.9,
         alignItems: 'center',
         justifyContent: 'center',
     },
     logoImage: {
-        width: 100,
+        width: 110,
         resizeMode: 'contain',
     },
     loginBlock: {
         shadowColor: Colors.panther,
         shadowOffset: { width: 3, height: 3 },
         shadowOpacity: 0.2,
-        shadowRadius: 4
+        shadowRadius: 4,
+        backgroundColor: Colors.charcoal
     },
     bottomSection: {
         alignItems: 'center',

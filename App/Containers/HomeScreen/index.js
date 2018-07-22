@@ -1,14 +1,13 @@
-import {compose, hoistStatics, withHandlers, withState, withPropsOnChange, withProps} from 'recompose';
+import {compose, withHandlers, withState, withPropsOnChange, withProps} from 'recompose';
 import View from './view';
 import Screens from '../../Themes/Screens';
-import hideHeader from '../hideHeader';
 
 const enhancer = compose(
     withState('error', 'setError'),
     withState('login', 'setLogin'),
     withState('password', 'setPassword'),
     withHandlers({
-        onLogin: ({setError, Header, navigation, navigationOptions, login, password}) => async () => {
+        onLogin: ({setError, navigation, login, password}) => async () => {
             try {                
                 /*
                     1. validate data
@@ -19,7 +18,6 @@ const enhancer = compose(
 
                 // can go back - should be fixed
                 navigation.navigate(Screens.HOME_SCREEN);
-                console.log(Header ,navigation);
             } catch ({message}) {
                 setError(message);
             }
@@ -32,9 +30,4 @@ const enhancer = compose(
     })
 );
 
-const enhance = enhancer(View);
-enhance.navigationOptions = {
-    header: null
-};
-
-export default enhance;
+export default enhancer(View);

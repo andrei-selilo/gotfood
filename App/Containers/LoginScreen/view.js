@@ -8,7 +8,7 @@ import RoundedButton from '../../Components/RoundedButton';
 import FullButton from '../../Components/FullButton';
 import DrawerButton from '../../Components/DrawerButton';
 import Block from '../../Components/Block';
-import Input from '../../Components/Input';
+import LineInput from '../../Components/LineInput';
 
 const LoginScreen = ({onLogin, onSignUp, setLogin, setPassword}) => (
     <BaseView backgroundColor={Colors.cloud}>
@@ -19,8 +19,8 @@ const LoginScreen = ({onLogin, onSignUp, setLogin, setPassword}) => (
             </View>
             <Block style={styles.loginBlock}>
                 <Text style={[ApplicationStyles.sectionTitle]}>Login</Text>
-                <Input style={styles.input} placeholder="Login" onChangeText={setLogin}/>
-                <Input style={styles.input} placeholder="Password" secureTextEntry={true} onChangeText={setPassword}/>
+                <LineInput style={styles.input} placeholder="Login" onChangeText={setLogin}/>
+                <LineInput style={styles.input} placeholder="Password" secureTextEntry={true} onChangeText={setPassword}/>
                 <RoundedButton 
                     style={{backgroundColor: Colors.bloodOrange, marginTop: 35}} 
                     text="Login" 

@@ -8,9 +8,6 @@ const styles = StyleSheet.create({
     rootContainer: {
         flex: 1
     },
-    header: {
-        flex: 0.075,
-    },
     container: {
         flex: 0.825,
         flexDirection: 'column',
