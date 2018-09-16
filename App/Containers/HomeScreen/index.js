@@ -6,6 +6,8 @@ const enhancer = compose(
     withState('error', 'setError'),
     withState('login', 'setLogin'),
     withState('password', 'setPassword'),
+    withState('trendingElements', 'setTrendingElements'),
+    withState('categoryElements', 'setCategoryElements'),
     withHandlers({
         onLogin: ({setError, navigation, login, password}) => async () => {
             try {                
@@ -26,6 +28,9 @@ const enhancer = compose(
             /*
                 1. navigate
             */
+        },
+        onProfileClick: ({}) => async () => {
+
         }
     })
 );

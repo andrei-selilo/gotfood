@@ -7,16 +7,14 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     rootContainer: {
-        padding: Metrics.basePadding,
-        marginBottom: Metrics.baseMargin,
-        marginHorizontal: Metrics.marginHorizontal,
+        padding: Metrics.baseMargin,
         borderWidth: 1,
         borderColor: Colors.silver,
-        borderRadius: 8,
+        borderRadius: 12,
         backgroundColor: Colors.snow
     },
     container: {
-        fontSize: 16
+        fontSize: 14
     },
 });
 

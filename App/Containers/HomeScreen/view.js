@@ -1,45 +1,22 @@
 //import PropTypes from 'prop-types';
 import React from 'react';
 import { View, ScrollView, Text, TextInput, Image } from 'react-native';
-import styles from './styles';
-import BaseView from '../../Components/BaseView'
 import { Colors, Fonts, Metrics, ApplicationStyles, Images } from '../../Themes'
-import RoundedButton from '../../Components/RoundedButton';
-import FullButton from '../../Components/FullButton';
-import DrawerButton from '../../Components/DrawerButton';
-import Block from '../../Components/Block';
-import FullInput from '../../Components/FullInput';
+import { BaseView, RoundedButton, FullButton, DrawerButton, Block, FullInput, ProfileIcon, HorizontalList, SearchBar } from '../../Components'
+import styles from './styles';
 
-const LoginScreen = ({topBlocks = [1,2,3], setSearch}) => (
+const LoginScreen = ({ topBlocks = [1, 2, 3], setSearch, onProfileClick, 
+  trendingElements = { Breakfast: [1, 2, 3] }, 
+  categoryElements = { Favourite: [1], Events: [1, 2], Healthy: [1, 2, 3, 4]}
+}) => (
     <BaseView backgroundColor={Colors.cloud}>
         <View style={styles.container}>
-            <View style={styles.searchContainer}>
-                <FullInput style={styles.searchInput} placeholder="Search" onChangeText={setSearch}/>
+            <View style={styles.row}>
+              <SearchBar onChangeText={setSearch}/>
+              <ProfileIcon onClick={onProfileClick}/>
             </View>
-            <View style={styles.topContainer}>
-                <ScrollView horizontal={true}>{
-                    topBlocks.map(() => {
-                        return (
-                            <Block style={styles.topBlock}>
-                                <Text>Text</Text>
-                            </Block>
-                        )
-                    })}
-                </ScrollView>
-            </View>
-            <View style={styles.listContainer}>
-                <View style={styles.listHeader}>
-                </View>
-                <ScrollView>{
-                    topBlocks.map(() => {
-                        return (
-                            <Block style={styles.listBlock}>
-                                <Text>Text</Text>
-                            </Block>
-                        )
-                    })}
-                </ScrollView>
-            </View>
+            <HorizontalList key={'trending'} style={styles.horizontalList} elements={trendingElements}/>
+            <HorizontalList key={'categories'} style={styles.horizontalList} elements={categoryElements}/>
         </View>
     </BaseView>
 );
