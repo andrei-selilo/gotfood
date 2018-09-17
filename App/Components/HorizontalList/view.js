@@ -4,7 +4,7 @@ import styles from './styles';
 import { Colors, Metrics, Fonts } from '../../Themes'
 import { Block, TextButton } from '../../Components'
 
-const HorizontalList = ({ style, elements = {}, onElementClick, titleFocused, setTitleFocused }) => (
+const HorizontalList = ({ style = {}, elements = {}, onElementClick, titleFocused, setTitleFocused }) => (
   <View style={[style]}>
     <ScrollView horizontal={true}>
       {
@@ -32,7 +32,7 @@ const HorizontalList = ({ style, elements = {}, onElementClick, titleFocused, se
           return elements[row].map((block, index ) => {
             return (
               <TouchableOpacity key={`${row}-block-${index}`} onPress={onElementClick}>
-                <Block style={styles.block}>
+                <Block style={[styles.block, style.block]}>
                   <Text>{row}</Text>
                 </Block>
               </TouchableOpacity>

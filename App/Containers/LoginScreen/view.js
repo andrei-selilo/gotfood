@@ -1,17 +1,12 @@
 //import PropTypes from 'prop-types';
 import React from 'react';
 import { View, Text, TextInput, Image } from 'react-native';
-import styles from './styles';
-import BaseView from '../../Components/BaseView'
+import { BaseView, RoundedButton, FullButton, DrawerButton, Block, LineInput } from '../../Components'
 import { Colors, Fonts, Metrics, ApplicationStyles, Images } from '../../Themes'
-import RoundedButton from '../../Components/RoundedButton';
-import FullButton from '../../Components/FullButton';
-import DrawerButton from '../../Components/DrawerButton';
-import Block from '../../Components/Block';
-import LineInput from '../../Components/LineInput';
+import styles from './styles';
 
 const LoginScreen = ({onLogin, onSignUp, setLogin, setPassword}) => (
-    <BaseView backgroundColor={Colors.cloud}>
+    <BaseView backgroundColor={Colors.cloud} header={true} footerMenu={false}>
         <View style={styles.container}>
             <View style={styles.logoContainer}>
                 <Image style={styles.logoImage} source={Images.hklogo}/>

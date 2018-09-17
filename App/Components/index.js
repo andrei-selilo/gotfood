@@ -11,6 +11,7 @@ import Stories from './Stories'
 import HorizontalList from './HorizontalList'
 import SearchBar from './SearchBar'
 import TextButton from './TextButton'
+import FooterMenu from './FooterMenu'
 
 export {
     AlertMessage, 
@@ -25,5 +26,6 @@ export {
     Stories,
     HorizontalList,
     SearchBar,
-    TextButton
+    TextButton,
+    FooterMenu
 }

@@ -35,4 +35,9 @@ const enhancer = compose(
     })
 );
 
-export default enhancer(View);
+const enhance = enhancer(View);
+enhance.navigationOptions = {
+    header: null
+};
+
+export default enhance;

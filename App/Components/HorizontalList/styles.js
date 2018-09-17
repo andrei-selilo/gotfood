@@ -3,8 +3,8 @@ import { Colors, Metrics } from '../../Themes'
 
 const styles = StyleSheet.create({
     block: {
-      width: 180,
-      height: 180,
+      width: 250,
+      height: 250,
       marginHorizontal: Metrics.marginHorizontal - 5,
       marginVertical: 0,
     },
