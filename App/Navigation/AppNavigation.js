@@ -3,8 +3,7 @@ import Screens from '../Themes/Screens'
 import LaunchScreen from '../Containers/LaunchScreen'
 import LoginScreen from '../Containers/LoginScreen'
 import SignupScreen from '../Containers/SignupScreen'
-import HomeScreen from '../Containers/HomeScreen'
-
+import BaseScreen from '../Containers/BaseScreen'
 
 import styles from './Styles/NavigationStyles'
 
@@ -13,7 +12,7 @@ const PrimaryNav = StackNavigator({
   LaunchScreen: { screen: LaunchScreen },
   LoginScreen: { screen: LoginScreen },
   SignupScreen: { screen: SignupScreen },
-  HomeScreen: { screen: HomeScreen },
+  BaseScreen: { screen: BaseScreen },
 }, {
   // Default config for all screens
   headerMode: 'screen',

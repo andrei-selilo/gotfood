@@ -12,6 +12,9 @@ const styles = StyleSheet.create({
     },
     menuItem: {
       margin: Metrics.baseMargin
+    },
+    unfocusedText: {
+      color: Colors.steel,
     }
 });
 

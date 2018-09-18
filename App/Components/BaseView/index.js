@@ -6,10 +6,10 @@ import { FooterMenu } from '../../Components'
 
 const BaseView = ({
   children, headerChildren, 
-  loading, isNextButton, 
+  loading, 
   header = true, footerMenu = true,
-  onBackPress, nextLabel = "Next", backLabel = "Back", onNextButtonPress,
   backgroundColor = Colors.silver,
+  screenContent, setScreenContent,
   ...props
 }) => (
     <View style={[styles.rootContainer, { backgroundColor }]}>
@@ -19,7 +19,7 @@ const BaseView = ({
       <ScrollView style={styles.container} contentContainerStyle={styles.containerContent}>
         {children}
       </ScrollView>
-      { footerMenu && <FooterMenu style={styles.footer}/> }
+      { footerMenu && <FooterMenu style={styles.footer} screenContent={screenContent} setScreenContent={setScreenContent}/> }
     </View>
   );
 
