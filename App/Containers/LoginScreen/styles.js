@@ -24,7 +24,8 @@ const styles = StyleSheet.create({
         shadowColor: Colors.panther,
         shadowOffset: { width: 3, height: 3 },
         shadowOpacity: 0.2,
-        shadowRadius: 4
+        shadowRadius: 4,
+        alignItems: 'center',
     },
     bottomSection: {
         alignItems: 'center',

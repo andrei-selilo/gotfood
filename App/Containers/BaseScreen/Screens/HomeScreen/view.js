@@ -2,12 +2,22 @@
 import React from 'react'
 import { View, ScrollView, Text, TextInput, Image } from 'react-native'
 import { Colors, Fonts, Metrics, ApplicationStyles, Images } from '../../../../Themes'
-import { BaseView, RoundedButton, FullButton, DrawerButton, Block, FullInput, ProfileIcon, HorizontalList, SearchBar } from '../../../../Components'
-import styles from './styles';
+import { BaseView, RoundedButton, FullButton, DrawerButton, Block, ListBlock, ItemBlock, FullInput, ProfileIcon, HorizontalList, SearchBar } from '../../../../Components'
+import { styles, listStyles } from './styles'
 
 const HomeScreen = ({ topBlocks = [1, 2, 3], setSearch, onProfileClick,
-  trendingElements = { Breakfast: [1, 2, 3] },
-  categoryElements = { Favourite: [1], Events: [1, 2], Healthy: [1, 2, 3, 4] }
+  trendingElements = { 
+    Breakfast: [
+      <ListBlock title={`McDonalds`} description={`Breakfast`} list={''} horizontal={false} />, 
+      <ItemBlock title={`Salmon via Pari`} description={`Gran Bellagio`} content={''} />, 
+      <ListBlock />
+    ] 
+  },
+  categoryElements = { 
+    Favourite: [<ItemBlock title={`Salmon via Pari`} description={`Gran Bellagio`} content={''} />], 
+    Events: [<ListBlock />, <ItemBlock />], 
+    Healthy: [<ItemBlock />, <ListBlock />, <ItemBlock />] 
+  }
 }) => (
     <View>
       <View style={styles.container}>
@@ -15,8 +25,8 @@ const HomeScreen = ({ topBlocks = [1, 2, 3], setSearch, onProfileClick,
           <SearchBar onChangeText={setSearch} />
           <ProfileIcon onClick={onProfileClick} />
         </View>
-        <HorizontalList key={'trending'} style={styles.horizontalList} elements={trendingElements} />
-        <HorizontalList key={'categories'} style={styles.horizontalList} elements={categoryElements} />
+        <HorizontalList key={'trending'} style={listStyles} elements={trendingElements} />
+        <HorizontalList key={'categories'} style={listStyles} elements={categoryElements} />
       </View>
     </View>
   );

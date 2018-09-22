@@ -1,10 +1,10 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 import { Colors, Metrics } from '../../Themes'
 
 const styles = StyleSheet.create({
     block: {
-      width: 250,
-      height: 250,
+      width: 100,
+      height: 100,
       marginHorizontal: Metrics.marginHorizontal - 5,
       marginVertical: 0,
     },
@@ -15,6 +15,6 @@ const styles = StyleSheet.create({
     titleText: {
       color: Colors.steel,
     }
-});
+})
 
-export default styles;
+export default styles

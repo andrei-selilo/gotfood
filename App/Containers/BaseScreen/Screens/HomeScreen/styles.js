@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { Colors, Metrics } from '../../../../Themes'
 
-const styles = StyleSheet.create({
+export const styles = StyleSheet.create({
     flex: {
         flex: 1,
     },
@@ -12,6 +12,13 @@ const styles = StyleSheet.create({
       marginTop: 10, 
       flexDirection: 'row'
     }
-});
+})
 
-export default styles;
+export const listStyles = StyleSheet.create({
+  block: {
+    width: 250,
+    height: 250,
+  }
+})
+
+export default styles

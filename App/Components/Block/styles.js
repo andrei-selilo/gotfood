@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native'
 import { Colors, Metrics } from '../../Themes'
 
 const styles = StyleSheet.create({
@@ -10,11 +10,11 @@ const styles = StyleSheet.create({
         marginVertical: Metrics.marginVertical,
         borderRadius: Metrics.buttonRadius,
         padding: Metrics.basePadding,
-        alignItems: 'center',
+        // alignItems: 'center',
         backgroundColor: Colors.snow
     },
     container: {
     },
-});
+})
 
-export default styles;
+export default styles

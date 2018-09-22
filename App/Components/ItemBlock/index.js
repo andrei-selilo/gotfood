@@ -3,7 +3,7 @@ import { View } from 'react-native'
 import styles from './styles'
 import Colors from '../../Themes/Colors'
 
-const Block = ({
+const ItemBlock = ({
   children, loading, header, style
 }) => (
   <View style={[styles.rootContainer, style]}>
@@ -13,4 +13,4 @@ const Block = ({
   </View>
 )
 
-export default Block
+export default ItemBlock
