@@ -1,11 +1,12 @@
 import * as React from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import styles from './styles'
 import Colors from '../../Themes/Colors'
 
 const CardBlock = ({
   children, loading, header, style,
-  title, description, currency, value, type
+  title, description, currency, value, type,
+  ...props
 }) => (
   <View style={[styles.rootContainer, style]}>
     <View style={styles.container}>

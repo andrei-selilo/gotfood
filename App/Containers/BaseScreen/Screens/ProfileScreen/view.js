@@ -7,7 +7,10 @@ import { styles, cardListStyles } from './styles'
 
 const ProfileScreen = ({
   paymentListElements = {
-    CreditCard: [<CardBlock title={'Card1'} currency={'USD'} value={2200} type={'VISA'}/>, <CardBlock title={'Card2'} currency={'USD'} value={2200} type={'VISA'}/>],
+    CreditCard: [
+      <CardBlock title={'Card1'} currency={'USD'} value={2200} type={'VISA'}/>, 
+      <CardBlock title={'Card2'} currency={'USD'} value={2200} type={'VISA'}/>,
+    ],
     Crypto: [<Text>Bitcoin</Text>, <Text>Litecoin</Text>],
     Other: [<Text>PayPal</Text>]
   }
@@ -18,7 +21,7 @@ const ProfileScreen = ({
           <View style={[styles.blockTitleContainer]}>
             <Text style={[styles.blockTitleText]}>Payment</Text>
           </View>
-          <HorizontalList elements={paymentListElements} style={cardListStyles} />
+          <HorizontalList elements={paymentListElements} style={cardListStyles} listType={"radio"} addable={true}/>
         </Block>
       </View>
     </View>
