@@ -8,8 +8,8 @@ import { styles, cardListStyles } from './styles'
 const ProfileScreen = ({
   paymentListElements = {
     CreditCard: [
-      <CardBlock title={'Card1'} currency={'USD'} value={2200} type={'VISA'}/>, 
-      <CardBlock title={'Card2'} currency={'USD'} value={2200} type={'VISA'}/>,
+      <CardBlock title={'Card1'} currency={'USD'} code={"XXXX XXXX XXXX 4192"} type={'VISA'}/>, 
+      <CardBlock title={'Card2'} currency={'USD'} code={"XXXX XXXX XXXX 3312"} type={'MASTERCARD'}/>,
     ],
     Crypto: [<Text>Bitcoin</Text>, <Text>Litecoin</Text>],
     Other: [<Text>PayPal</Text>]

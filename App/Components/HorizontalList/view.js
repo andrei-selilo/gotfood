@@ -46,13 +46,16 @@ const getElementBlocks = function ({ elements, blocksSelected, listType, titleFo
     if (row !== titleFocused) {
       return
     }
+
     const blocks = elements[row].map((block, index) => {
       let marker
+      let style = [styles.block]
       const elementId = `${row}-block-${index}`
       if (blocksSelected.includes(elementId)) {
-        marker = getMarker(listType)
+        // marker = getMarker(listType)
+        style.push(styles.blockSelected)
       }
-      return (<TouchableOpacity key={elementId} onPress={() => onPress(elementId)}>{block}{marker}</TouchableOpacity>)
+      return (<TouchableOpacity key={elementId} onPress={() => onPress(elementId)} style={style}>{block}{marker}</TouchableOpacity>)
     })
     if (addable) {
       blocks.push(<TouchableOpacity style={[styles.addBlockContainer]} />)
@@ -63,7 +66,16 @@ const getElementBlocks = function ({ elements, blocksSelected, listType, titleFo
 }
 
 const getMarker = function (listType) {
-  return (<View style={styles.radioMarker} />)
+  let style
+  switch (listType) {
+    case 'check':
+      out = styles.checkMarker
+      break;
+    case 'radio':
+      style = styles.radioMarker
+      break;
+  }
+  return (<View style={style} />)
 }
 
 export default HorizontalList

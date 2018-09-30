@@ -16,7 +16,7 @@ const PrimaryNav = StackNavigator({
 }, {
   // Default config for all screens
   headerMode: 'screen',
-  initialRouteName: Screens.LOGIN_SCREEN,
+  initialRouteName: Screens.BASE_SCREEN,
   navigationOptions: {
     headerStyle: styles.header
   }

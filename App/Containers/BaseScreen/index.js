@@ -4,9 +4,9 @@ import View from './view'
 
 const enhancer = compose(
   withState('error', 'setError'),
-  withState('screenContent', 'setScreenContent', Screens.PROFILE_SCREEN),
+  withState('screenContent', 'setScreenContent', Screens.HOME_SCREEN),
   withHandlers({
-    onProfileClick: ({ }) => async () => {
+    onProfileClick: ({  }) => async () => {
 
     }
   })

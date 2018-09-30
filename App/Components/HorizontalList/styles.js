@@ -16,10 +16,12 @@ const styles = StyleSheet.create({
     flexGrow: 1
   },
   block: {
-    width: 100,
-    height: 100,
     marginHorizontal: Metrics.marginHorizontal - 5,
-    marginVertical: 0,
+    padding: 3,
+    borderRadius: Metrics.buttonRadius,
+  },
+  blockSelected: {
+    backgroundColor: Colors.facebook
   },
   addBlockContainer: {
     width: 50,
@@ -33,6 +35,15 @@ const styles = StyleSheet.create({
     height: 20,
     borderRadius: 20/2,
     backgroundColor: Colors.bloodOrange,
+    position: 'absolute',
+    bottom: 25,
+    right: 25,
+  },
+  checkMarker: {
+    width: 20,
+    height: 20,
+    // borderRadius: 20/2,
+    backgroundColor: Colors.cloud,
     position: 'absolute',
     bottom: 25,
     right: 25,
