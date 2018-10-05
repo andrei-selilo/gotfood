@@ -10,10 +10,10 @@ const styles = StyleSheet.create({
     color: Colors.steel,
   },
   blockContainer: {
-    flex: 0,
+
   },
   blockContainerContent: {
-    flexGrow: 1
+    // flexGrow: 1
   },
   block: {
     marginHorizontal: Metrics.marginHorizontal - 5,

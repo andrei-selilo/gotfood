@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: Metrics.buttonRadius,
-    backgroundColor: Colors.snow
+    backgroundColor: Colors.snow,
   },
   headerContainer: {
     flex: 0.2,
@@ -28,9 +28,8 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 0.8,
-    justifyContent: 'center',
     overflow: 'hidden',
-    alignItems: 'center'
+    paddingVertical: 10,
   },
   likeContainer: {
     position: 'absolute',

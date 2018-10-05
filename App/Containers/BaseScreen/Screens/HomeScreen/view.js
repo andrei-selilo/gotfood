@@ -6,17 +6,31 @@ import { BaseView, RoundedButton, FullButton, DrawerButton, Block, ListBlock, It
 import { styles, listStyles } from './styles'
 
 const HomeScreen = ({ topBlocks = [1, 2, 3], setSearch, onProfileClick,
-  trendingElements = { 
+  trendingElements = {
     Breakfast: [
-      <ListBlock title={`McDonalds`} description={`Breakfast`} items={[1,2,3]} horizontal={false} />, 
-      <ItemBlock title={`Salmon via Pari`} description={`Gran Bellagio`}><Image source={require('../../../../Images/logo_colored.png')}/></ItemBlock>, 
+      <ListBlock
+        title={`McDonalds`}
+        description={`Breakfast`}
+        horizontal={false}
+        items={[
+          { title: 'List1', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List2', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List3', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List3', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List3', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List3', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List3', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+          { title: 'List3', description: 'description', key: '', onPress: async () => { console.log(`buy "key"`) } },
+        ]}
+      />,
+      <ItemBlock title={`Salmon via Pari`} description={`Gran Bellagio`}><Image source={require('../../../../Images/logo_colored.png')} /></ItemBlock>,
       <ListBlock />
-    ] 
+    ]
   },
-  categoryElements = { 
-    Favourite: [<ItemBlock title={`Salmon via Pari`} description={`Gran Bellagio`}><Image source={require('../../../../Images/logo_colored.png')}/></ItemBlock>], 
-    Events: [<ListBlock />, <ItemBlock />], 
-    Healthy: [<ItemBlock />, <ListBlock />, <ItemBlock />] 
+  categoryElements = {
+    Favourite: [<ItemBlock title={`Salmon via Pari`} description={`Gran Bellagio`}><Image source={require('../../../../Images/logo_colored.png')} /></ItemBlock>],
+    Events: [<ListBlock />, <ItemBlock />],
+    Healthy: [<ItemBlock />, <ListBlock />, <ItemBlock />]
   }
 }) => (
     <View>

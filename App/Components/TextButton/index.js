@@ -2,7 +2,6 @@ import * as React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles';
 import { Colors, Metrics, Fonts } from '../../Themes'
-import { Block } from '../../Components'
 
 const TextButton = ({ style, textStyle, title = '', onPress, focus = false }) => (
   <TouchableOpacity style={[style]} onPress={onPress}>

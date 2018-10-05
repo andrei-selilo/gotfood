@@ -11,7 +11,6 @@ const enhancer = compose(
       setBlocksSelected([])
     },
     onElementClick: ({ error, listType, blocksSelected, setBlocksSelected }) => async (elementId) => {
-      console.log(` Hlist ${listType} onElementClick : elementId`, elementId)
       if (listType === 'radio') {
         setBlocksSelected([elementId])
       } else if (listType === 'check'){

@@ -1,10 +1,11 @@
 import * as React from 'react'
-import { View, Text, TouchableOpacity } from 'react-native'
+import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+import ListBlockItem from './ListBlockItem'
 import styles from './styles'
 import Colors from '../../Themes/Colors'
 
 const ItemBlock = ({
-  key, children, loading, 
+  key, items, loading, 
   style, title, description, 
   onLikePress = function() {}
 }) => (
@@ -22,9 +23,12 @@ const ItemBlock = ({
           )
         }
       </View>
-      <View style={styles.contentContainer}>
-        {children}
-      </View>
+      <ScrollView style={styles.contentContainer}>
+        { items && items.map((row) => {
+          return (<ListBlockItem title={row.title} description={row.description} onPress={row.onPress}/>)
+        })
+        }
+      </ScrollView>
     </View>
   )
 
