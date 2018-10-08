@@ -2,26 +2,20 @@
 import React from 'react'
 import { View, ScrollView, Text, TextInput, Image } from 'react-native'
 import { Colors, Fonts, Metrics, ApplicationStyles, Images } from '../../../../Themes'
-import { BaseView, RoundedButton, FullButton, DrawerButton, Block, FullInput, ProfileIcon, HorizontalList, SearchBar, CardBlock } from '../../../../Components'
+import { BaseView, RoundedButton, FullButton, DrawerButton, Block, FullInput, ProfileIcon, HorizontalList, SimpleList, SearchBar, CardBlock } from '../../../../Components'
 import { styles, cardListStyles } from './styles'
 
 const ProfileScreen = ({
-  paymentListElements = {
-    CreditCard: [
-      <CardBlock title={'Card1'} currency={'USD'} code={"XXXX XXXX XXXX 4192"} type={'VISA'}/>, 
-      <CardBlock title={'Card2'} currency={'USD'} code={"XXXX XXXX XXXX 3312"} type={'MASTERCARD'}/>,
-    ],
-    Crypto: [<Text>Bitcoin</Text>, <Text>Litecoin</Text>],
-    Other: [<Text>PayPal</Text>]
-  }
+  statsListElements = [{ title: 'One', description: 'despacito' }, { title: 'Two', description: 'despacito' }, { title: 'Three', description: 'despacito' }],
+  historyListElements = [{ title: 'One', description: 'despacito' }, { title: 'Two', description: 'despacito' }, { title: 'Three', description: 'despacito' }],
 }) => (
     <View header={true} footerMenu={true}>
       <View style={styles.container}>
         <Block>
-          <View style={[styles.blockTitleContainer]}>
-            <Text style={[styles.blockTitleText]}>Payment</Text>
-          </View>
-          <HorizontalList elements={paymentListElements} style={cardListStyles} listType={"radio"} addable={true}/>
+          <SimpleList elements={statsListElements} title={"Stats"} />
+        </Block>
+        <Block>
+          <SimpleList elements={historyListElements} title={"History"} />
         </Block>
       </View>
     </View>

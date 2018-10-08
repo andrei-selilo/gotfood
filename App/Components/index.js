@@ -9,6 +9,7 @@ import ProfileIcon from './ProfileIcon'
 import RoundedButton from './RoundedButton' 
 import Stories from './Stories' 
 import HorizontalList from './HorizontalList'
+import SimpleList from './SimpleList'
 import SearchBar from './SearchBar'
 import TextButton from './TextButton'
 import FooterMenu from './FooterMenu'
@@ -28,6 +29,7 @@ export {
     RoundedButton,
     Stories,
     HorizontalList,
+    SimpleList,
     SearchBar,
     TextButton,
     FooterMenu,
