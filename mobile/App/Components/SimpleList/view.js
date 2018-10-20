@@ -4,20 +4,20 @@ import styles from './styles'
 import { Colors, Metrics, Fonts } from '../../Themes'
 import { Block, TextButton, CardBlock } from '../../Components'
 
-const SimpleList = ({ elements, title, ...props }) => (
+const SimpleList = ({ elements, title, key, ...props }) => (
   <View style={styles.container}>
     <TouchableOpacity style={styles.titleContainer}>
       <Text style={styles.titleTextContainer}>{title}</Text>
       <View style={styles.titleMinimizeButton}/>
     </TouchableOpacity>
-    {renderElements(elements)}
+    {renderElements(elements, key)}
   </View>
 )
 
-const renderElements = function (elements) {
-  return elements.map((row) => {
+const renderElements = function (elements, key = 0) {
+  return elements.map((row, index) => {
     return (
-      <ScrollView style={styles.itemContainer} contentContainerStyle={styles.itemContainerContent}>
+      <ScrollView style={styles.itemContainer} contentContainerStyle={styles.itemContainerContent} key={`simplelist-${key}-element-${index}`}>
         <View style={styles.itemTitleContainer}>
           <Text style={styles.itemTitleText}>{row.title}</Text>
         </View>

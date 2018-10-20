@@ -14,11 +14,16 @@ const CartScreen = ({
   ],
   paymentListElements = {
     CreditCard: [
-      <CardBlock title={'Card1'} currency={'USD'} code={"XXXX XXXX XXXX 4192"} type={'VISA'} />,
+      <CardBlock title={'Card1'} currency={'USD'} code={"XXXX XXXX XXXX 4192"} type={'VISA'} selected={true}/>,
       <CardBlock title={'Card2'} currency={'USD'} code={"XXXX XXXX XXXX 3312"} type={'MASTERCARD'} />,
     ],
-    Crypto: [<Text>Bitcoin</Text>, <Text>Litecoin</Text>],
-    Other: [<Text>PayPal</Text>]
+    Crypto: [
+      <CardBlock title={'Crypto1'} currency={'BTC'} code={"XXXX XXXX XXXX XXXX"} type={'Bitcoin'} />, 
+      <CardBlock title={'Crypto2'} currency={'EOS'} code={"XXXX XXXX XXXX XXXX"} type={'EOS'} />,
+    ],
+    Other: [
+      <CardBlock title={'PayPal'} currency={'USD'} code={"XXXX XXXX XXXX XXXX"} type={'PayPal'} />
+    ]
   }
 }) => (
     <View>
