@@ -27,10 +27,6 @@ module.exports = {
       password: {
         type: Sequelize.STRING(60)
       },
-      regionId: {
-        type: Sequelize.STRING(30),
-        references: { model: {tableName: 'regions'}, key: 'id' }
-      },
       status: {
         type: Sequelize.STRING(30)
       },

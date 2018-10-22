@@ -1,5 +1,5 @@
-import { Table, Column, Model, IsUUID, PrimaryKey, Unique, IsEmail, HasMany, DataType, CreatedAt, UpdatedAt, ForeignKey, BelongsTo, Default } from 'sequelize-typescript'
-import { UserRole, Region } from '../models'
+import { Table, Column, Model, IsUUID, PrimaryKey, Unique, IsEmail, HasMany, DataType, CreatedAt, UpdatedAt, ForeignKey, BelongsTo, Default, AfterFind, BelongsToMany } from 'sequelize-typescript'
+import { UserRole, Region, BankAccount } from '../models'
 import * as uuid from 'uuid/v4'
 
 export enum UserStatus {
@@ -45,21 +45,17 @@ export class User extends Model<User> {
   ))
   public status: string
 
-  @ForeignKey(() => Region)
-  @Column(DataType.UUIDV4)
-  regionId: string
-
   @Column(DataType.JSONB)
   public info: {
-    phones: string[],
-    addresses: string[],
+    phones?: string[],
+    addresses?: string[],
   }
 
   @Column(DataType.JSONB)
   public privateInfo: {
-    regionIds: string[],
-    roleIds: string[],
-    bankAccountIds: string[]
+    regionIds?: string[],
+    userRoleIds?: string[],
+    bankAccountIds?: string[]
   }
 
   @Column(DataType.BOOLEAN)
@@ -70,5 +66,32 @@ export class User extends Model<User> {
 
   @UpdatedAt
   public updatedAt: Date
+
+  // @BelongsToMany(() => Region, () => UserRegion)
+  // public regions: Region[]
+
+  @BelongsToMany(() => UserRole, () => UserUserRole)
+  public userRoles: UserRole[]
+
+  // @BelongsToMany(() => BankAccount)
+  // public bankAccounts: BankAccount[]
+
+  // public userRoles: UserRole[]
+  // public bankAccounts: BankAccount[]
+
+  // @AfterFind
+  // public static afterFindHandler(instance: User | User[]) {
+  //   const users: User[] = Array.isArray(instance) ? instance : [instance]
+
+  //   let regionIds: Set<number>
+  //   let userRoleIds: Set<number> 
+  //   let bankAccountIds: Set<number>  
+
+  //   users.forEach((row) => {
+  //     row.privateInfo
+  //   })
+
+
+  // }
 
 }

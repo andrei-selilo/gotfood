@@ -3,7 +3,7 @@ const uuidv4 = require('uuid/v4')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('bankAccounts', {
+    return queryInterface.createTable('userUserRole', {
       id: {
         type: Sequelize.STRING,
         primaryKey: true,
@@ -13,21 +13,9 @@ module.exports = {
         type: Sequelize.STRING,
         references: { model: { tableName: 'users' }, key: 'id' }
       },
-      type: {
-        type: Sequelize.STRING(64)
-      },
-      name: {
-        type: Sequelize.STRING(64)
-      },
-      currency: {
-        type: Sequelize.STRING(64)
-      },
-      data: {
-        type: Sequelize.JSONB,
-        defaultValue: {}
-      },
-      active: {
-        type: Sequelize.BOOLEAN
+      userRoleId: {
+        type: Sequelize.STRING,
+        references: { model: { tableName: 'userRoles' }, key: 'id' }
       },
       createdAt: {
         type: Sequelize.DATE
@@ -39,6 +27,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('bankAccounts');
+    return queryInterface.dropTable('userUserRole');
   }
 };

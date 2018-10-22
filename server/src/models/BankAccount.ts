@@ -1,5 +1,5 @@
 import { Table, Column, Model, IsUUID, PrimaryKey, Unique, IsEmail, HasMany, DataType, CreatedAt, UpdatedAt, ForeignKey, Default } from 'sequelize-typescript'
-import { UserRole } from '../models'
+import { User } from '../models'
 import * as uuid from 'uuid/v4'
 
 @Table({
@@ -13,6 +13,10 @@ export class BankAccount extends Model<BankAccount> {
   @PrimaryKey
   @Column
   public id: string
+
+  @ForeignKey(() => User)
+  @Column(DataType.UUIDV4)
+  public userId: string
 
   @Column(DataType.STRING(64))
   public type: string

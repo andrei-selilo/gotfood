@@ -3,33 +3,23 @@ const uuidv4 = require('uuid/v4')
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('items', {
+    return queryInterface.createTable('options', {
       id: {
         type: Sequelize.STRING,
         primaryKey: true,
         defaultValue: uuidv4()
       },
-      userId: {
-        type: Sequelize.STRING,
-        references: { model: { tableName: 'users' }, key: 'id' }
-      },
       name: {
-        type: Sequelize.STRING(64)
-      },
-      type: {
-        type: Sequelize.STRING(64)
+        type: Sequelize.STRING(150)
       },
       description: {
         type: Sequelize.STRING(500)
       },
-      points: {
-        type: Sequelize.INTEGER
+      value: {
+        type: Sequelize.STRING
       },
-      price: {
-        type: Sequelize.INTEGER
-      },
-      active: {
-        type: Sequelize.BOOLEAN
+      type: {
+        type: Sequelize.STRING(150)
       },
       createdAt: {
         type: Sequelize.DATE
@@ -38,9 +28,17 @@ module.exports = {
         type: Sequelize.DATE
       }
     })
+      .then(() => {
+        return queryInterface.addIndex('options', ['name'],
+          {
+            indexName: 'optionName',
+            indicesType: 'UNIQUE'
+          }
+        )
+      })
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('items');
+    return queryInterface.dropTable('options');
   }
 };

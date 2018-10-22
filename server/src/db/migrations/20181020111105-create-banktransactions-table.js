@@ -19,11 +19,11 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       fromBankAccountId: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         references: { model: { tableName: 'bankAccounts' }, key: 'id' }
       },
       toBankAccountId: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.STRING,
         references: { model: { tableName: 'bankAccounts' }, key: 'id' }
       },
       createdAt: {
