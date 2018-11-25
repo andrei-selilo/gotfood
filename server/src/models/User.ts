@@ -1,5 +1,5 @@
 import { Table, Column, Model, IsUUID, PrimaryKey, Unique, IsEmail, HasMany, DataType, CreatedAt, UpdatedAt, ForeignKey, BelongsTo, Default, AfterFind, BelongsToMany } from 'sequelize-typescript'
-import { UserRole, Region, BankAccount } from '../models'
+import { UserRole, UserUserRole, Region, UserRegion, BankAccount } from '../models'
 import * as uuid from 'uuid/v4'
 
 export enum UserStatus {
@@ -67,17 +67,14 @@ export class User extends Model<User> {
   @UpdatedAt
   public updatedAt: Date
 
-  // @BelongsToMany(() => Region, () => UserRegion)
-  // public regions: Region[]
-
   @BelongsToMany(() => UserRole, () => UserUserRole)
   public userRoles: UserRole[]
 
-  // @BelongsToMany(() => BankAccount)
-  // public bankAccounts: BankAccount[]
+  @BelongsToMany(() => Region, () => UserRegion)
+  public regions: Region[]
 
-  // public userRoles: UserRole[]
-  // public bankAccounts: BankAccount[]
+  @HasMany(() => BankAccount)
+  public bankAccounts: BankAccount[]
 
   // @AfterFind
   // public static afterFindHandler(instance: User | User[]) {

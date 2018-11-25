@@ -1,5 +1,5 @@
 import { Table, Column, Model, IsUUID, PrimaryKey, Unique, IsEmail, HasMany, DataType, CreatedAt, UpdatedAt, BelongsTo, Default, BelongsToMany } from 'sequelize-typescript'
-import { User } from '../models'
+import { User, UserUserRole } from '../models'
 import * as uuid from 'uuid/v4'
 
 @Table({
@@ -24,7 +24,7 @@ export class UserRole extends Model<UserRole> {
   @UpdatedAt
   public updatedAt: Date
 
-  @BelongsToMany(() => User, UserUserRole)
+  @BelongsToMany(() => User, () => UserUserRole)
   public users: User[]
 
 }
